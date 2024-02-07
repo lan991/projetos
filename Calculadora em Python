@@ -1,0 +1,22 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        raise ValueError('Não é possível dividir por zero')
+    return x / y
+
+# Example usage
+num1 = float(input('Digite o primeiro número: '))
+num2 = float(input('Digite o segundo numero: '))
+
+print('Addition:', add(num1, num2))
+print('Subtraction:', subtract(num1, num2))
+print('Multiplication:', multiply(num1, num2))
+print('Division:', divide(num1, num2))
