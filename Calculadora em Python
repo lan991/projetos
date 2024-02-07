@@ -12,7 +12,6 @@ def divide(x, y):
         raise ValueError('Não é possível dividir por zero')
     return x / y
 
-# Example usage
 num1 = float(input('Digite o primeiro número: '))
 num2 = float(input('Digite o segundo numero: '))
 
