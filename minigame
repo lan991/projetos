@@ -1,0 +1,15 @@
+palpite = 0
+numero = 9
+
+while True:  #nós executamos sem verificar
+    print("dica: calculo matematico que é =18")
+    print("Qual o numero correto? ")
+    palpite = int(input())
+    if palpite == numero:  #estamos verificando nosso código.
+        print("Parabens!! Voce acertou")
+        break
+    else:
+        print("Voce errou, tente novamente")
+else:
+    print("erro na aplicacao")
+    print(bool(palpite))
