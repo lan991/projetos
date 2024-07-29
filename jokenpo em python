@@ -1,0 +1,77 @@
+from random import choice
+
+jogador_vitorias = 0
+maq_vitorias = 0
+jogar = False
+
+
+def opcao_jogador():
+    esc_jogador = input("escolha pedra, papel ou tesoura: ")
+    esc_jogador = esc_jogador.lower()
+    if esc_jogador == "pedra":
+        return esc_jogador
+    elif esc_jogador == "papel":
+        return esc_jogador
+
+    elif esc_jogador == "tesoura":
+        return esc_jogador
+    else:
+        print("opção inválida, tente novamente")
+        opcao_jogador()
+
+
+def iniciar_jogo():
+    global jogar
+    print('Seja bem vindo ao jogo do Jokenpo!\npara parar o jogo digite break\nGostaria de começar a jogar?\n')
+    escolha = input('S/N: ')
+    if escolha == ["SIM", "sim", "Sim", "s", "S"]:
+        pass
+    else:
+        jogar = True
+
+
+def opcao_maquina():
+    esc_maquina = choice(["pedra", "papel", "tesoura"])
+    return esc_maquina
+
+
+def continuar_jogo():
+    global jogar
+    continuar = input("Voce quer continuar? S/N \n")
+    if continuar in ["SIM", "sim", "Sim", "s", "S"]:
+        pass
+    elif continuar in ["NAO", "nao", "Nao", "n", "N"]:
+        jogar = False
+    else:
+        print("opção inválida, tente novamente")\
+    
+iniciar_jogo()
+while jogar:
+    print("-"*30)
+    esc_jogador = opcao_jogador()
+    esc_maquina = opcao_maquina()
+    print("-"*30)
+
+    if(esc_jogador == "pedra") and (esc_maquina == "tesoura") \
+       or (esc_jogador == "papel") and (esc_maquina == "pedra") \
+           or (esc_jogador == "tesoura") and (esc_maquina == "papel"):
+           #jogador ganha
+           print(f"Jogador escolheu {esc_jogador} e a Máquina escolheu {esc_maquina} "
+           " Resultado: Voce ganhou!")
+           jogador_vitorias += 1
+
+    elif esc_jogador == esc_maquina:
+        #empate
+        print(f"Jogador escolheu {esc_jogador} e a Máquina escolheu {esc_maquina} "
+           " Resultado: empate!")
+    else:
+        print(f"Jogador escolheu {esc_jogador} e a Máquina escolheu {esc_maquina} "
+           " Resultado: Maquina ganhou!")
+        maq_vitorias += 1
+    
+    print("-"*30)
+    print(f"Vitorias do jogador: {jogador_vitorias}")
+    print(f"Vitorias da maquina: {maq_vitorias}")
+    print("-"*30)
+
+    continuar_jogo()
