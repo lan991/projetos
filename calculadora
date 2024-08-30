@@ -1,0 +1,62 @@
+from decimal import Decimal
+from fractions import Fraction
+import math
+
+def add(x, y):
+    """Essa função serve para somar dois numeros passados como parametro!"""
+    return x + y
+
+def subtract(x, y):
+    """Essa função serve para subtrair dois numeros passados como parametro!"""
+    return x - y
+
+def multiply(x, y):
+    """Essa função serve para multiplicar dois numeros passados como parametro!"""
+    return x * y
+
+def divide(x, y):
+    """Essa função serve para dividir dois numeros passados como parametro!"""
+    if y == 0:
+        raise ValueError('Não é possível dividir por zero')
+    return x / y
+
+def fraction(x, y):
+    """Essa função serve para calcular fração!"""
+    Fraction.from_float(0.1)
+    return x, y
+
+def raiz(x):
+    """Essa função serve para fazer a raiz quadrada de um numero!"""
+    return math.sqrt(x)
+
+def potencia(x):
+    """Essa função serve para fazer um numero elevado ao quadrado!"""
+    return x ** 2
+
+def maior(x, y):
+    """Essa função serve para mostrar o maior numero entre dois passados como parametro!"""
+    if x > y:
+        return x
+    else:
+        return y
+    
+def media(x, y):
+    """Essa função serve para calcular a media de dois numeros passados como parametro!"""
+    resultado = (x + y) / 2
+    return resultado
+
+
+num1 = float(input('Digite o primeiro número: '))
+num2 = float(input('Digite o segundo numero: '))
+
+print('Addition:', add(num1, num2))
+print('Subtraction:', subtract(num1, num2))
+print('Multiplication:', multiply(num1, num2))
+print('Division:', divide(num1, num2))
+print('fraction:', fraction(num1, num2))
+print('Raiz Quadrada:', raiz(num1))
+print('Potência:', potencia(num1))
+print('O maior número é: ', maior(num1, num2))
+print("A média aritmética é: ", media(num1, num2))
+
+#exs 1 e 2
